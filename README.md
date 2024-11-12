@@ -12,7 +12,6 @@ FreelanceHub is a freelancing platform designed to connect clients with top-tier
 - [Setup Instructions](#setup-instructions)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-  - [Build for Production](#build-for-production)
 - [Contributing](#contributing)
 - [Future Plans](#future-plans)
 
@@ -54,14 +53,6 @@ Ensure you have the following installed:
    npm start
 
    This command will start the development server and open the application in your default browser. By default, it runs on http://localhost:3000.
-
-### Build for Production
-
-To create a production-ready build of the application, run:
-
-```bash
-    npm run build
-This will generate an optimized build in the build directory.
 
 ## Contributing
 
