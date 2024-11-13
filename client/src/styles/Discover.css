@@ -1,0 +1,17 @@
+/* src/styles/Discover.css */
+.discover {
+    padding: 20px;
+    background-color: #FFDD57;
+  }
+  
+  .courses {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .course-card {
+    background-color: #FFF7D0;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  

@@ -1,0 +1,17 @@
+/* src/styles/TaskTracking.css */
+.task-tracking {
+    padding: 20px;
+    background-color: #FFDD57;
+  }
+  
+  .tasks {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .task-card {
+    background-color: #FFF7D0;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  

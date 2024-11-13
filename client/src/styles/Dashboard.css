@@ -1,0 +1,12 @@
+/* src/styles/Dashboard.css */
+.dashboard {
+    padding: 20px;
+    background-color: #FFDD57;
+  }
+  
+  .profile-section {
+    background-color: #FFF7D0;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  

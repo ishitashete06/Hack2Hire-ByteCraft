@@ -1,0 +1,12 @@
+/* src/styles/SkillDevelopment.css */
+.skill-development {
+    padding: 20px;
+    background-color: #FFDD57;
+  }
+  
+  .skill-card {
+    background-color: #FFF7D0;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  

@@ -60,20 +60,26 @@ We welcome contributions from the community! If you’d like to add new features
 
 1. **Fork the Repository**: Click on the "Fork" button on the top right of this page to fork this repository.
 2. **Clone Your Fork**: Clone your forked repository to your local machine:
+
    ```bash
    git clone https://github.com/your-username/Hack2Hire-ByteCraft.git
 3. **Create a New Branch**: Make a new branch for your feature or bug fix:
+
    ```bash
    git checkout -b feature-name
 4. **Make Your Changes**: Edit the code with your new feature or bug fix.
+
 5. **Commit Your Changes**: Add and commit your changes with a descriptive commit message:
+
    ```bash
    git add .
    git commit -m 'Add new feature'
 6. **Push to Your Branch**: Push the changes to your branch on GitHub:
+
    ```bash
    git push origin feature-name
 7. **Submit a Pull Request**: Go to the original repository on GitHub, and you’ll see a prompt to create a pull request from your new branch. Follow the instructions to open a pull request for review.
+
 Thank you for helping improve FreelanceHub!
 
 ## Future Plans
