@@ -1,12 +1,23 @@
 /* src/styles/SkillDevelopment.css */
 .skill-development {
-    padding: 20px;
-    background-color: #FFDD57;
-  }
-  
-  .skill-card {
-    background-color: #FFF7D0;
-    padding: 20px;
-    border-radius: 8px;
-  }
-  
+  width: 100%;
+  max-width: 1200px;
+}
+
+.skills {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+
+.skill-card {
+  background-color: #FFF7D0;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex: 1 1 30%;
+  min-width: 200px;
+}
