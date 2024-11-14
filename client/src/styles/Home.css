@@ -14,7 +14,7 @@ h1 {
   margin-bottom: 30px;
 }
 
-.categories, .freelancers {
+.categories, .courses {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -23,7 +23,7 @@ h1 {
   margin-bottom: 40px;
 }
 
-.category-card, .freelancer-card {
+.category-card, .courses-card {
   background-color: rgb(65, 201, 206);
   align-items: baseline;
   padding: 40px;
@@ -38,7 +38,7 @@ h1 {
   margin: 0 auto;
 }
 
-.category-card:hover, .freelancer-card:hover {
+.category-card:hover, .courses-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }

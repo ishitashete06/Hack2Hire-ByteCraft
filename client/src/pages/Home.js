@@ -10,13 +10,13 @@ function Home() {
       <h1>Discover Top Projects</h1>
       <div className="categories">
         <button className="category-card" onClick={() => navigate('/swipe-project')}>Web Development</button>
-        <div className="category-card">Graphic Design</div>
-        <div className="category-card">Marketing</div>
+        <button className="category-card">Graphic Design</button>
+        <button className="category-card">Marketing</button>
       </div>
-      <h2>Recommended Freelancers</h2>
-      <div className="freelancers">
-        <div className="freelancer-card">Freelancer 1</div>
-        <div className="freelancer-card">Freelancer 2</div>
+      <h2>Recommended Courses</h2>
+      <div className="courses">
+        <button className="courses-card">Freelancer 1</button>
+        <button className="courses-card">Freelancer 2</button>
       </div>
     </div>
   );
