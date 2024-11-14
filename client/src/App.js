@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Discover from './pages/Discover';
 import TaskTracking from './pages/TaskTracking';
 import SwipeProject from './pages/SwipeProject';
+import Navbar from './components/Navbar';
 import Dashboard from './pages/Dashboard';
 import SkillDevelopment from './pages/SkillDevelopment';
 import './styles/App.css';
