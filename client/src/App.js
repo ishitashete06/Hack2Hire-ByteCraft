@@ -6,6 +6,8 @@ import Discover from './pages/Discover';
 import Navbar from './components/shared/Navbar'
 import TaskTracking from './pages/TaskTracking';
 import SwipeProject from './pages/SwipeProject';
+import Navbar from './components/Navbar';
+import About from './pages/About';
 import Dashboard from './pages/Dashboard';
 import SkillDevelopment from './pages/SkillDevelopment';
 import './styles/App.css';

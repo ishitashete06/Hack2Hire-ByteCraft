@@ -25,6 +25,7 @@ h1 {
 
 .category-card, .freelancer-card {
   background-color: rgb(65, 201, 206);
+  align-items: baseline;
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
@@ -32,7 +33,8 @@ h1 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   flex: 1 1 30%;
   min-width: 220px;
-  max-width: 300px;
+  max-width: 350px;
+  height:150px;
   margin: 0 auto;
 }
 
