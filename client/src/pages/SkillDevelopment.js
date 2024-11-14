@@ -54,16 +54,19 @@ function SkillDevelopment() {
   return (
     <div className="skill-development">
       <h1>Skill Development</h1>
+      <h2>Coding Mastery</h2>
       <button className="skill-card" onClick={AdvanceWebDevCourse}>Advanced Web Development</button>
       <button className="skill-card" onClick={FrontEndDev}>Front End Development</button>
       <button className="skill-card" onClick={BackEndDev}>Back End Development</button>
       <button className="skill-card" onClick={MongoBasics}>MongoDB Basics</button>
 
+      <h2>Become a Graphic Guru</h2>
       <button className="graphic-skill-card" onClick={LayoutBasics}>Layout Basics</button>
       <button className="graphic-skill-card" onClick={Typography}>Typography for Designers</button>
       <button className="graphic-skill-card" onClick={ColorTheory}>Color Theory for Beginners</button>
       <button className="graphic-skill-card" onClick={VisualHierarchy}>Visual Hierarchy in Design</button>
 
+      <h2>Marketing 101</h2>
       <button className="marketing-skill-card" onClick={basicMarketing}>4 P's of Marketing</button>
       <button className="marketing-skill-card" onClick={targetAudience}>Know Your Target Audience</button>
       <button className="marketing-skill-card" onClick={contentMarketing}>Content Marketing</button>
