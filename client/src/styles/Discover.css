@@ -2,6 +2,7 @@
 .discover {
   width: 100%;
   max-width: 1200px;
+  align-items: center;
 }
 
 .courses {
@@ -16,6 +17,7 @@
   background-color: #FFF7D0;
   padding: 40px;
   border-radius: 8px;
+  margin-left: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   flex: 1 1 30%;
