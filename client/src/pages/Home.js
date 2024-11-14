@@ -4,8 +4,8 @@ import '../styles/Home.css';
 
 function Home() {
   return (
-    <div className="home">
-      <h1>Discover Top Freelancers</h1>
+    <div className="container home">
+      <h1>Discover Top Categories of Project</h1>
       <div className="categories">
         <div className="category-card">Web Development</div>
         <div className="category-card">Graphic Design</div>
