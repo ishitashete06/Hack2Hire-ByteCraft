@@ -2,6 +2,7 @@
 .skill-development {
   width: 100%;
   max-width: 1200px;
+  align-items: center;
 }
 
 .skills {
@@ -13,11 +14,22 @@
 }
 
 .skill-card {
-  background-color: #FFF7D0;
+  background-color: #ffa985;
   padding: 40px;
   border-radius: 8px;
+  align-items: center;
+  width: 270px;
+  height:250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-left: 25px;
+  margin-bottom: 25px;
+  align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   flex: 1 1 30%;
   min-width: 200px;
+}
+.skill-card :hover{
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
