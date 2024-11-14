@@ -18,6 +18,38 @@ function SkillDevelopment() {
   const MongoBasics = () => {
     window.open('https://youtu.be/ofme2o29ngU?si=cDiQq_dRV8aDSIWC');
   }
+  const LayoutBasics = () =>{
+    window.open('https://www.youtube.com/watch?v=6h3R-7FUnEY')
+  }
+  const Typography = () =>{
+    window.open('https://www.youtube.com/watch?v=k3tCjErPhM0')
+  }
+
+  const ColorTheory=() =>{
+    window.open('https://www.youtube.com/watch?v=_2LLXnUdUIc')
+  }
+
+  const VisualHierarchy=() =>{
+    window.open('https://www.youtube.com/watch?v=6LCGCDvdlco')
+  }
+  
+  const basicMarketing=() =>{
+    window.open('https://blog.hubspot.com/marketing/marketing-101');
+  }
+
+  const targetAudience= ()=>{
+    window.open('https://www.youtube.com/watch?v=9_J6JXpP8OY');
+  }
+
+  const contentMarketing= ()=>{
+    window.open('https://www.youtube.com/watch?v=eXEKdrkXyA4');
+  }
+
+  const socialMediaMarketing= ()=>{
+    window.open('https://www.youtube.com/watch?v=6zAkbX0pXbA');
+  }
+  
+
 
   return (
     <div className="skill-development">
@@ -26,6 +58,18 @@ function SkillDevelopment() {
       <button className="skill-card" onClick={FrontEndDev}>Front End Development</button>
       <button className="skill-card" onClick={BackEndDev}>Back End Development</button>
       <button className="skill-card" onClick={MongoBasics}>MongoDB Basics</button>
+
+      <button className="graphic-skill-card" onClick={LayoutBasics}>Layout Basics</button>
+      <button className="graphic-skill-card" onClick={Typography}>Typography for Designers</button>
+      <button className="graphic-skill-card" onClick={ColorTheory}>Color Theory for Beginners</button>
+      <button className="graphic-skill-card" onClick={VisualHierarchy}>Visual Hierarchy in Design</button>
+
+      <button className="marketing-skill-card" onClick={basicMarketing}>4 P's of Marketing</button>
+      <button className="marketing-skill-card" onClick={targetAudience}>Know Your Target Audience</button>
+      <button className="marketing-skill-card" onClick={contentMarketing}>Content Marketing</button>
+      <button className="marketing-skill-card" onClick={socialMediaMarketing}>Social Media Marketing for Beginners</button>
+
+
 
     </div>
   );
