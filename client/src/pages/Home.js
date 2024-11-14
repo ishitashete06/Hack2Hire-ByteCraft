@@ -1,13 +1,15 @@
 // src/pages/Home.js
 import React from 'react';
 import '../styles/Home.css';
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
+  const navigate = useNavigate();
   return (
-    <div className="container home">
-      <h1>Discover Top Categories of Project</h1>
+    <div className="home">
+      <h1>Discover Top Projects</h1>
       <div className="categories">
-        <div className="category-card">Web Development</div>
+        <button className="category-card" onClick={() => navigate('/discover')}>Web Development</button>
         <div className="category-card">Graphic Design</div>
         <div className="category-card">Marketing</div>
       </div>
