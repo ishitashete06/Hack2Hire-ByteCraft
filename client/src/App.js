@@ -6,6 +6,7 @@ import Discover from './pages/Discover';
 import TaskTracking from './pages/TaskTracking';
 import SwipeProject from './pages/SwipeProject';
 import Navbar from './components/Navbar';
+import About from './pages/About';
 import Dashboard from './pages/Dashboard';
 import SkillDevelopment from './pages/SkillDevelopment';
 import './styles/App.css';
@@ -13,14 +14,18 @@ import './styles/App.css';
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/discover" element={<Discover />} />
-        <Route path="/task-tracking" element={<TaskTracking />} />
-        <Route path="/swipe-project" element={<SwipeProject />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/skill-development" element={<SkillDevelopment />} />
-      </Routes>
+      <Navbar /> {/* Place Navbar here so it persists across all pages */}
+      <div className="content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/discover" element={<Discover />} />
+          <Route path="/task-tracking" element={<TaskTracking />} />
+          <Route path="/swipe-project" element={<SwipeProject />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/skill-development" element={<SkillDevelopment />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </div>
     </Router>
   );
 }
