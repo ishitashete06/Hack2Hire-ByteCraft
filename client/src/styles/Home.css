@@ -2,23 +2,49 @@
 .home {
   width: 100%;
   max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .categories, .freelancers {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 20px;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .category-card, .freelancer-card {
-  background-color: #FFF7D0;
+  background-color: rgb(65, 201, 206);
   padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   flex: 1 1 30%;
-  min-width: 200px;
+  min-width: 220px;
+  max-width: 300px;
+  margin: 0 auto;
 }
+
+.category-card:hover, .freelancer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+  font-size: 2rem;
+  color: #555;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
