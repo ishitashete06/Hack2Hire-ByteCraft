@@ -1,6 +1,7 @@
 /* src/styles/Navbar.css */
 .navbar {
     background-color: blueviolet;
+    background-color: #333;
     padding: 10px 20px;
   }
   
@@ -22,6 +23,10 @@
   
   .navbar a:hover {
     background-color: rgb(99, 6, 185);
+    border-radius: 5px;
+  }
+  
+    background-color: #575757;
     border-radius: 5px;
   }
   

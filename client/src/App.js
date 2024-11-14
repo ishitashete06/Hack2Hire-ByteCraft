@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Discover from './pages/Discover';
+import Navbar from './components/shared/Navbar'
 import TaskTracking from './pages/TaskTracking';
 import SwipeProject from './pages/SwipeProject';
 import Navbar from './components/Navbar';
