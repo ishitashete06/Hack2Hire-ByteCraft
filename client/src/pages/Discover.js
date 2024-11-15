@@ -7,12 +7,22 @@ function Discover() {
   const navigate = useNavigate();
   return (
     <div className="discover">
-      <h1>Discover Courses and Projects</h1>
-      <div className="courses">
-        <button className="course-card" onClick={()=> navigate('/swipe-project')}>Projects</button> 
-      {/* develop the swipe functionality here in Projects button */}
-        <button className="course-card" onClick={()=> navigate('/skill-development')}>Courses</button>
-        
+      <h1>Discover Courses, Projects, and Assessments</h1>
+      <div className="cards-container">
+        <button className="card" onClick={() => navigate('/skill-development')}>
+          <h2>Courses</h2>
+          <p>Explore a variety of courses to enhance your skills.</p>
+        </button>
+
+        <button className="card" onClick={() => navigate('/swipe-project')}>
+          <h2>Projects</h2>
+          <p>Engage in hands-on projects to apply your knowledge.</p>
+        </button>
+
+        <button className="card" onClick={() => navigate('/assessment')}>
+          <h2>Skill Assessments</h2>
+          <p>Test your knowledge and get certified in your expertise.</p>
+        </button>
       </div>
     </div>
   );

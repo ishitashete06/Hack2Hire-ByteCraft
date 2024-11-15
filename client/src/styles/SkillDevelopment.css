@@ -57,4 +57,25 @@
   background-color: #E2BFD9;
 }
 
+.filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.filter-icon {
+  font-size: 20px;
+  color: #666;
+}
+
+.filter-dropdown {
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
 
