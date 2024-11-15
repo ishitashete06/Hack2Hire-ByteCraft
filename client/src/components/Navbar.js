@@ -3,12 +3,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Navbar.css'; 
+//import imageSVG from '../assets/imagesvg.svg'
 
 function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <img src="../assets/image"></img>
+        {/* <img src={imageSVG} alt="logo"></img> */}
         <Link to="/">Freelance Hub</Link> {/* Logo text, can be replaced with an actual logo */}
       </div>
       <ul className="navbar-links">
