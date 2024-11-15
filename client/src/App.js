@@ -9,6 +9,8 @@ import Navbar from './components/Navbar';
 import About from './pages/About';
 import Dashboard from './pages/Dashboard';
 import SkillDevelopment from './pages/SkillDevelopment';
+import SavedProjects from './pages/SavedProjects';
+
 import Assessment from './pages/Assessment';
 import './styles/App.css';
 
@@ -26,6 +28,7 @@ function App() {
           <Route path="/assessment" element={<Assessment />} />
           <Route path="/skill-development" element={<SkillDevelopment />} />
           <Route path="/about" element={<About />} />
+          <Route path="/saved-projects" element={<SavedProjects />} />
         </Routes>
       </div>
     </Router>
