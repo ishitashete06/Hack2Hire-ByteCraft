@@ -1,4 +1,43 @@
-/* src/styles/Home.css */
+/* Remove any default margin for body */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.welcomeBanner {
+  background-color: #E2BFD9; 
+  height: 300px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.welcomeText h2 {
+  font-size: 2.5rem;
+  color: #5b268a;
+  margin: 0;
+}
+
+.welcomeText p {
+  font-size: 1.2rem;
+  color: #674188;
+  margin-top: 10px;
+}
+
+.bannerImage {
+  width: 200px; /* Adjust image size as needed */
+  height: auto;
+  border-radius: 8px;
+  height: 250px;
+  width:350px;
+  margin-right: 50px;
+  object-fit: cover;
+}
+
 .home {
   width: 100%;
   max-width: 1200px;
@@ -7,46 +46,81 @@
   font-family: Arial, sans-serif;
 }
 
-h1 {
-  font-size: 2.5rem;
+.sectionTitle {
+  font-size: 2rem;
   color: #333;
-  text-align: center;
-  margin-bottom: 30px;
+  text-align: left;
+  margin: 40px 0 20px;
 }
 
-.categories, .freelancers {
+.categories {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 20px;
-  width: 100%;
   margin-bottom: 40px;
 }
 
-.category-card, .freelancer-card {
-  background-color: rgb(65, 201, 206);
-  align-items: baseline;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+.category-card {
+  background-color: #F7EFE5;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+  flex: 1;
+  cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  flex: 1 1 30%;
-  min-width: 220px;
-  max-width: 350px;
-  height:150px;
-  margin: 0 auto;
 }
 
-.category-card:hover, .freelancer-card:hover {
+.category-card:hover {
+  background-color: #fcebf9;
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-h2 {
+.category-card span {
   font-size: 2rem;
-  color: #555;
-  text-align: center;
-  margin-bottom: 20px;
 }
 
+.category-card h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 10px 0 5px;
+}
+
+.category-card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.projects{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.project-card {
+  background-color: #F9F9F9;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.project-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.project-card h3 {
+  font-size: 1.2rem;
+  color: #333;
+}

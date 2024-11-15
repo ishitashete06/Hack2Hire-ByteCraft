@@ -1,8 +1,8 @@
-/* src/styles/SkillDevelopment.css */
 .skill-development {
   width: 100%;
   max-width: 1200px;
-  align-items: center;
+  padding: 20px;
+  margin: auto;
 }
 
 .skills {
@@ -10,63 +10,52 @@
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 20px;
-  width: 100%;
 }
 
-.skill-card {
+.skill-card,
+.graphic-skill-card,
+.marketing-skill-card {
   background-color: #ffa985;
-  padding: 40px;
+  padding: 20px;
   border-radius: 8px;
+  width: 250px;
+  height: 200px; /* Increased height to accommodate the image and title */
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  width: 270px;
-  height:150px;
+  justify-content: space-between; /* Space between image and title */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin-left: 25px;
   margin-bottom: 25px;
-  align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  flex: 1 1 30%;
-  min-width: 200px;
   cursor: pointer;
 }
-.skill-card :hover, .graphic-skill-card :hover, .marketing-skill-card :hover{
-  
+
+.skill-card:hover,
+.graphic-skill-card:hover,
+.marketing-skill-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
-.graphic-skill-card{
-  background-color: #48cb0b;
-  cursor: pointer;
-  padding: 40px;
+
+.course-image {
+  width: 100%;
+  height: 100px;
+  object-fit: cover; /* Ensures the image fits nicely within the container */
   border-radius: 8px;
-  align-items: center;
-  width: 270px;
-  height:150px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-left: 25px;
-  margin-bottom: 25px;
-  align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  flex: 1 1 30%;
-  min-width: 200px;
 }
 
-.marketing-skill-card{
+.course-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.graphic-skill-card {
+  background-color: #48cb0b;
+}
+
+.marketing-skill-card {
   background-color: #d1871f;
-  padding: 40px;
-  border-radius: 8px;
-  align-items: center;
-  width: 270px;
-  height:150px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-left: 25px;
-  cursor: pointer;
-  margin-bottom: 25px;
-  align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  flex: 1 1 30%;
-  min-width: 200px;
 }
