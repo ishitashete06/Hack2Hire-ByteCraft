@@ -1,26 +1,57 @@
 /* src/pages/SwipeProject.css */
 .swipe-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
-  width: 100vw;
-  background-color: #f9f9f9;
+  height: 105vh;
+  width: 105vw;
+  background-color: #F7EFE5;
+  color: #674188;
+  padding: 1px;
 }
 
-.card {
+.swipe-header {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.swipe-header h1 {
+  color: #674188;
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.swipe-header p {
+  font-size: 1rem;
+  color: #674188;
+}
+.end-card{
   position: relative;
-  width: 90%;
+  width: 100%;
   max-width: 500px;
-  height: 80%;
+  height: 200px;
   background: #fff;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  padding: 20px;
+  padding: 10px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.card{
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 465px;
+  background: #fff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
   transition: transform 0.4s ease-in-out;
 }
 
@@ -29,7 +60,7 @@
   height: 200px;
   object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .card-content {
@@ -38,9 +69,9 @@
 }
 
 .card-content h2 {
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: #674188;
+  margin-bottom: 5px;
 }
 
 .card-content p {
@@ -50,14 +81,15 @@
 
 .details p {
   margin: 5px 0;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
+  color: #674188;
 }
 
 .buttons {
   display: flex;
   width: 100%;
   justify-content: space-around;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
 .swipe-btn {
@@ -80,12 +112,44 @@
 }
 
 .swipe-btn.right {
-  background-color: #4caf50;
+  background-color: #4aae4d;
 }
 
-.no-more-projects {
-  font-size: 1.5rem;
-  color: #333;
+.end-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #E2BFD9;
+  color: #674188;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.end-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.end-card p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.explore-btn {
+  font-size: 1rem;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #674188;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.explore-btn:hover {
+  background-color: #C8A1E0;
 }
 
 /* Swipe Animations */
