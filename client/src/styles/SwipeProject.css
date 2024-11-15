@@ -1,18 +1,120 @@
-/* src/styles/SwipeProject.css */
-.swipe-project {
-  width: 100%;
-  max-width: 1200px;
+/* src/pages/SwipeProject.css */
+.swipe-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f9f9f9;
 }
 
-.project-card {
-  background-color: #FFF7D0;
-  padding: 40px;
+.card {
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  height: 80%;
+  background: #fff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+
+.card-content {
   text-align: center;
-  width: 60%;
-  min-width: 300px;
+  width: 100%;
+}
+
+.card-content h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  color: #555;
+  font-size: 1rem;
+}
+
+.details p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+.buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.swipe-btn {
+  font-size: 1.5rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+
+.swipe-btn.left {
+  background-color: #ff6b6b;
+}
+
+.swipe-btn.right {
+  background-color: #4caf50;
+}
+
+.no-more-projects {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Swipe Animations */
+.swipe-left {
+  animation: swipe-left 0.5s forwards;
+}
+
+.swipe-right {
+  animation: swipe-right 0.5s forwards;
+}
+
+@keyframes swipe-left {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100vw);
+    opacity: 0;
+  }
+}
+
+@keyframes swipe-right {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
 }
