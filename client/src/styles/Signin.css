@@ -1,0 +1,57 @@
+/* SignIn Page Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f7efe5; /* Light Shade 1 */
+    color: #333;
+  }
+  
+  .auth-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #e2bfd9; /* Light Shade 2 */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .auth-container h2 {
+    margin-bottom: 20px;
+    color: #674188; /* Dark Shade 2 */
+  }
+  
+  .auth-container form input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #c8a1e0; /* Dark Shade 1 */
+    border-radius: 5px;
+    background-color: #f7efe5; /* Light Shade 1 */
+    font-size: 1rem;
+  }
+  
+  .auth-container form input:focus {
+    border-color: #674188; /* Dark Shade 2 */
+    outline: none;
+    background-color: #fff;
+  }
+  
+  .auth-container form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #c8a1e0; /* Dark Shade 1 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .auth-container form button:hover {
+    background-color: #674188; /* Dark Shade 2 */
+    transform: scale(1.05);
+  }
+  
