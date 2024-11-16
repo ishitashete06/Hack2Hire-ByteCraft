@@ -5,6 +5,7 @@
   "main": "App.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "react-scripts build",
     "start": "react-scripts start"
   },
   "repository": {
@@ -27,7 +28,8 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.28.0",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "terser-webpack-plugin": "^5.3.0"
   },
   "browserslist": {
     "production": [
