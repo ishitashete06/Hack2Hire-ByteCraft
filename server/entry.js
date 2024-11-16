@@ -19,10 +19,7 @@ app.get('/', (req, res) => {
 app.use('/auth', userRoutes); // Your user-related routes
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,  // Optional: to explicitly specify the option (deprecated but harmless to include)
-  useUnifiedTopology: true // Optional: to explicitly specify the option (deprecated but harmless to include)
-})
+mongoose.connect(process.env.MONGO_URI)
 .then(() => console.log('Connected to MongoDB'))
 .catch(err => console.error('MongoDB connection error:', err));
 
