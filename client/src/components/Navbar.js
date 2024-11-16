@@ -18,7 +18,7 @@ function Navbar() {
         <li><Link to="/about">About</Link></li>
         <li><Link to="/discover">Discover</Link></li>
         <li><Link to="/dashboard">Dashboard</Link></li>
-        <li><Link to="/skill-development">Skill Development</Link></li>
+        <li><Link to="/swipe-project">Projects for You</Link></li>
       </ul>
       <div className="navbar-auth">
         <Link to="/signin" className="btn btn-signin">Sign In</Link>

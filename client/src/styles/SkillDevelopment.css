@@ -15,7 +15,7 @@
 .skill-card,
 .graphic-skill-card,
 .marketing-skill-card {
-  background-color: #ffa985;
+  background-color: #E2BFD9;
   padding: 20px;
   border-radius: 8px;
   width: 250px;
@@ -37,6 +37,7 @@
 .marketing-skill-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  background-color: #C8A1E0;
 }
 
 .course-image {
@@ -52,10 +53,29 @@
   margin-top: 10px;
 }
 
-.graphic-skill-card {
-  background-color: #48cb0b;
+.graphic-skill-card, .marketing-skill-card  {
+  background-color: #E2BFD9;
 }
 
-.marketing-skill-card {
-  background-color: #d1871f;
+.filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 10px;
 }
+
+.filter-icon {
+  font-size: 20px;
+  color: #666;
+}
+
+.filter-dropdown {
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+

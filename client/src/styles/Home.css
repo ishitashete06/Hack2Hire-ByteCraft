@@ -19,13 +19,14 @@ body {
 .welcomeText h2 {
   font-size: 2.5rem;
   color: #5b268a;
-  margin: 0;
+  margin-left: 50px;
 }
 
 .welcomeText p {
   font-size: 1.2rem;
   color: #674188;
   margin-top: 10px;
+  margin-left: 50px;
 }
 
 .bannerImage {
@@ -99,7 +100,7 @@ body {
 }
 
 .project-card {
-  background-color: #F9F9F9;
+  background-color: rgb(237, 220, 220);
   padding: 20px;
   border-radius: 8px;
   text-align: center;
@@ -111,6 +112,7 @@ body {
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  background-color:#fcebf9 ;
 }
 
 .project-card img {

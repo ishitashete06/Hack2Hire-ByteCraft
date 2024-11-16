@@ -1,6 +1,13 @@
 # Hack2Hire-ByteCraft
+TEAM BYTE CRAFT:
 
-The project developed for a Hack2hire hackathon organised by skillmingle. a freelance webapp with enhanced features.
+Team members
+1. Ami Shah
+2. Ishita Shete
+3. Varun Adhiya
+4. Samruddhi Bhende
+
+The project is developed for Hack2Hire Hackathon organised by SkillMingle. This is a freelance webapp with enhanced features. 
 
 ## FreelanceHub
 
@@ -46,6 +53,9 @@ Ensure you have the following installed:
 
    ```bash
    npm install
+   npm install react-router-dom
+   npm install react-icons
+  
 
 3. **Start the Development Server**
 

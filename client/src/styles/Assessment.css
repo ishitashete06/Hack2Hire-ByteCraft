@@ -1,0 +1,180 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+.assessment {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Subject Selection Step */
+.subject-selection {
+  margin: 20px 0;
+}
+
+.subject-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.subject-card {
+  width: 250px;
+  padding: 20px;
+  background-color: #E2BFD9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.subject-card h2 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.subject-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.start-button {
+  background-color: #674188;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.start-button:hover {
+  background-color: #C8A1E0;
+}
+
+/* Quiz Step */
+.quiz-section {
+  margin-top: 20px;
+}
+
+.video-container {
+  margin: 20px auto;
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  background-color: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.quiz-container {
+  text-align: left;
+  margin: 20px 0;
+}
+
+.question {
+  margin-bottom: 20px;
+}
+
+.question p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.question label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.submit-button {
+  display: inline-block;
+  background-color: #388e3c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #2e7d32;
+}
+
+/* Report Step */
+.report {
+  margin: 20px 0;
+}
+
+.report h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.report p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.restart-button {
+  background-color: #d32f2f;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.restart-button:hover {
+  background-color: #c62828;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .subject-cards {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .subject-card {
+    width: 100%;
+  }
+
+  .video-container {
+    height: 200px;
+  }
+
+  .question p, .question label {
+    font-size: 14px;
+  }
+
+  .submit-button, .restart-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
