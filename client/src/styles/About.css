@@ -1,12 +1,12 @@
 /* General container styles */
 .about-container {
   font-family: 'Arial', sans-serif;
-  padding: 30px;
+  padding: 20px;
   background: linear-gradient(to bottom right, #f3f4f6, #e2e8f0);
   color: #333;
-  width: 1800px;
+  width: auto fit-screen;
   color: #F7EFE5;
-  height: 530px;
+  height: auto fit-screen;
 }
 
 /* Header section styles */
@@ -33,7 +33,7 @@
 
 /* Intro section */
 .about-intro {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   text-align: center;
 }
 
@@ -46,35 +46,35 @@
   font-size: 1rem;
   color: #64748b;
   margin-top: 10px;
-  line-height: 1.6;
+  line-height: 1.3;
 }
 
 /* Features section */
 .features-section {
-  margin-top: 30px;
+  margin-top: 0px;
 }
 
 .features-section h2 {
   text-align: center;
   font-size: 2rem;
   color: #1e293b;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 10px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .feature-card {
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 15px;
+  padding: 13px;
   text-align: center;
-  width: 250px;
+  width: 230px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 

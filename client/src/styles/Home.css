@@ -8,7 +8,7 @@ body {
 .welcomeBanner {
   background-color: #E2BFD9; 
   height: 300px;
-  width: 100vw;
+  width: flex;
   display: flex;
   justify-content: space-between;
   align-items: center;
