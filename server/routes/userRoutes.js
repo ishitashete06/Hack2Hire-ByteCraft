@@ -1,7 +1,8 @@
 // routes/userRoutes.js
 const express = require('express');
 const router = express.Router();
-const { handleSignUp, handleSignIn } = require('../controllers/userController'); // Import controller
+const userController = require('../controllers/userControllers')
+const { handleSignUp, handleSignIn } = userController;// Import controller
 
 // User Sign-Up route
 router.post('/signup', handleSignUp);
