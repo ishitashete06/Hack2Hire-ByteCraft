@@ -4,14 +4,15 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  width: flex;
 }
 
 .task-tracking {
-  padding: 40px;
+  padding: 20px;
   background-color: #f7efe5;
   color: #674188;
   min-height: 100vh;
-  width: 1800px;
+  width: flex;
 }
 
 /* Header styles */
