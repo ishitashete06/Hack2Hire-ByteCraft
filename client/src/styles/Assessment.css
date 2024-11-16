@@ -18,7 +18,8 @@ body {
 
 /* Subject Selection Step */
 .subject-selection {
-  margin: 20px 0;
+  margin: 10px 0;
+  margin-top: 0;
 }
 
 .subject-cards {

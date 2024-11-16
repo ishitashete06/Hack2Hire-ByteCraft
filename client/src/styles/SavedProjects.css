@@ -2,7 +2,7 @@
     padding: 20px;
     background-color: #F7EFE5;
     font-family: 'Arial', sans-serif;
-    width: 1800px;
+    width: flex;
   }
   
   .saved-project-card {
