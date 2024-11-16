@@ -1,143 +1,194 @@
 /* General Styles */
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #F7EFE5; /* Light Shade 1 */
-  color: #674188; /* Dark Shade 2 */
-}
-
 .dashboard {
-  max-width: 1200px;
-  margin: 0 auto;
   padding: 20px;
-  text-align: center;
+  background-color: #f7efe5;
+  font-family: Arial, sans-serif;
 }
 
-.profile-section {
-  margin-bottom: 20px;
+/* Profile Card */
+.profile-card {
+  background-color: #e2bfd9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  background-color: #C8A1E0; /* Dark Shade 1 */
-  color: white;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.banner-image {
+  width: 100%;
+  height: 150px;
   border-radius: 10px;
 }
 
-.profile-info h1 {
-  margin: 0;
-  font-size: 2rem;
+.profile-details {
+  display: flex;
+  margin-top: 1px;
 }
 
-.profile-info p {
-  margin: 10px 0;
-  font-size: 1.2rem;
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-right: 20px;
 }
 
-.btn {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #674188; /* Dark Shade 2 */
+.profile-content h2 {
+  color: #674188;
+}
+
+.edit-btn,
+.add-btn,
+.save-btn,
+.cancel-btn,
+.task-btn,
+.saved-btn,
+.post-btn {
+  background-color: #674188;
   color: white;
   border: none;
+  padding: 10px 20px;
+  margin: 10px 5px;
   border-radius: 5px;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-.btn:hover {
-  background-color: #C8A1E0; /* Dark Shade 1 */
+.skill-chip {
+  display: inline-block;
+  background-color: #c8a1e0;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin: 5px;
 }
 
-.tab-menu {
+.remove-skill-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+/* Buttons and Input Styling */
+.add-skill-section input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.file-label {
+  display: inline-block;
+  background-color: #674188;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.file-input {
+  display: none;
+}
+
+/* General Styles */
+.dashboard {
+  padding: 20px;
+  background-color: #f7efe5;
+  font-family: Arial, sans-serif;
   display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 20px;
+  flex-direction: column;
 }
 
-.content {
+/* Profile Card */
+.profile-card {
+  background-color: #e2bfd9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin-bottom: 10px;
+  height: auto;
+}
+
+.profile-details {
+  display: flex;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.edit-btn,
+.add-btn,
+.save-btn,
+.cancel-btn,
+.task-btn,
+.saved-btn,
+.post-btn {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+/* Two-Column Layout */
+.below-profile {
   display: flex;
   gap: 20px;
-  justify-content: space-around;
-  align-items: stretch;
-  flex-wrap: wrap;
 }
 
-.card {
+.left-column {
   flex: 1;
-  max-width: 30%;
-  background: #E2BFD9; /* Light Shade 2 */
+}
+
+.right-column {
+  flex: 2;
+}
+
+.buttons-card{
+  width: 300px;
+  background-color: #e2bfd9;
   border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  color: #674188; /* Dark Shade 2 */
-}
-
-.card h3 {
-  margin-bottom: 15px;
-  font-size: 1.2rem;
-  text-align: center;
-}
-
-.portfolio-input {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.portfolio-input input {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #C8A1E0; /* Dark Shade 1 */
-  border-radius: 5px;
-}
-
-.portfolio-input .btn {
-  margin-left: 10px;
-}
-
-.portfolio-list {
-  list-style: none;
-  padding: 0;
-}
-
-.portfolio-list li {
-  margin: 5px 0;
-}
-
-.portfolio-list li a {
-  color: #674188; /* Dark Shade 2 */
-  text-decoration: none;
-}
-
-.portfolio-list li a:hover {
-  text-decoration: underline;
-}
-
-.project-post {
-  background: #F7EFE5; /* Light Shade 1 */
-  border: 1px solid #C8A1E0; /* Dark Shade 1 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 10px;
   margin-bottom: 10px;
-  border-radius: 5px;
-  word-wrap: break-word;
+  height: 130px;
+  align-content: center;
 }
 
-.project-status textarea {
-  width: 100%;
-  resize: none;
+.portfolio-card{
+  width: 300px;
+  background-color: #e2bfd9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #C8A1E0; /* Dark Shade 1 */
   margin-bottom: 10px;
+  height: flex;
+  align-content: center;
 }
 
-@media (max-width: 768px) {
-  .content {
-    flex-direction: column;
-  }
 
-  .card {
-    max-width: 100%;
-    margin-bottom: 20px;
-  }
+.saved-btn{
+  align-items: center;
+  margin-left: 70px;
 }
+
+.task-btn{
+  align-items: center;
+  margin-left: 73px;
+}
+
+.updates-card{
+  width: 900px;
+  background-color: #e2bfd9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin-bottom: 10px;
+  height: flex;
+  align-content: center;
+}
+
+
