@@ -4,9 +4,9 @@
   padding: 30px;
   background: linear-gradient(to bottom right, #f3f4f6, #e2e8f0);
   color: #333;
-  width: 1800px;
+  width: auto fit-screen;
   color: #F7EFE5;
-  height: 530px;
+  height: auto fit-screen;
 }
 
 /* Header section styles */
