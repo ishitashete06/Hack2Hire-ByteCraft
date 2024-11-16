@@ -10,14 +10,13 @@ import About from './pages/About';
 import Dashboard from './pages/Dashboard';
 import SkillDevelopment from './pages/SkillDevelopment';
 import SavedProjects from './pages/SavedProjects';
-
 import Assessment from './pages/Assessment';
 import './styles/App.css';
 
 function App() {
   return (
     <Router>
-      <Navbar /> {/* Place Navbar here so it persists across all pages */}
+      <Navbar /> 
       <div className="content">
         <Routes>
           <Route path="/" element={<Home />} />

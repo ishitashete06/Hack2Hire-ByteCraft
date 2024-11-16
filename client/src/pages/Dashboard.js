@@ -1,71 +1,109 @@
-  import React from 'react';
-  import '../styles/Dashboard.css';
-  import userImage from '../assets/userimage.jpg';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import '../styles/Dashboard.css';
 
-  function Dashboard() {
-    return (
-      <div className="dashboard">
-        {/* Profile Section */}
-        <div className="profile-section">
-          <div className="profile-banner">
-            <img src="banner.jpg" alt="Profile Banner" />
-          </div>
-          <div className="profile-info">
-            <img src={userImage} alt="User" className="profile-pic" />
-            <div className="profile-details">
-              <h2>Freelancer Profile</h2>
-              <p>367 projects</p>
-            </div>
-            <div className="profile-buttons">
-              <button className="connect-btn">Connect</button>
-              <button className="chat-btn">Chat</button>
-            </div>
-          </div>
-        </div>
+function Dashboard() {
+  const [bio, setBio] = useState("Welcome to my profile!");
+  const [status, setStatus] = useState("");
+  const [portfolio, setPortfolio] = useState([]);
+  const [portfolioInput, setPortfolioInput] = useState("");
 
-        {/* Navigation Tabs */}
-        <div className="tab-menu">
-          <button>Tasks</button>
-          <button>Profile</button>
-          <button>Portfolio</button>
-          <button>Certificates</button>
-          <button>Community</button>
-        </div>
+  const navigate = useNavigate();
 
-        {/* Content Section */}
-        <div className="content">
-          {/* Skills Hub */}
-          <div className="skills-hub">
-            <button>Add Bio</button>
-            <button>Edit Details</button>
-            <button>Add Skills</button>
-          </div>
+  const handleAddBio = () => {
+    const newBio = prompt("Enter your new bio:");
+    if (newBio) setBio(newBio);
+  };
 
-          {/* Project Status Update */}
-          <div className="project-status">
-            <textarea placeholder="What project are you working on?"></textarea>
-            <button>Post</button>
-          </div>
+  const handlePostStatus = () => {
+    if (status.trim()) {
+      setPortfolio([...portfolio, status]);
+      setStatus("");
+    }
+  };
 
-          {/* Portfolio Section */}
-          <div className="portfolio">
-            <h3>Portfolio</h3>
-            <div className="portfolio-item">
-              <img src="portfolio1.jpg" alt="Portfolio item" />
-            </div>
-          </div>
+  const handleAddPortfolioItem = () => {
+    if (portfolioInput.trim()) {
+      setPortfolio([...portfolio, portfolioInput]);
+      setPortfolioInput("");
+    }
+  };
 
-          {/* Project Feed */}
-          <div className="project-feed">
-            <h3>Projects</h3>
-            <div className="project-post">
-              <p><strong>Freelancer</strong> is working on a project</p>
-              <p>I’m currently working on an exciting project in web development. Check out some snapshots from my latest coding sessions and project milestones. Let’s build something amazing together!</p>
-            </div>
-          </div>
+  return (
+    <div className="dashboard">
+      <div className="profile-section">
+        <div className="profile-info">
+          <h1>Freelancer Dashboard</h1>
+          <p>{bio}</p>
+          <button className="btn" onClick={handleAddBio}>
+            Edit Bio
+          </button>
         </div>
       </div>
-    );
-  }
 
-  export default Dashboard;
+      <nav className="tab-menu">
+        <button className="btn" onClick={() => navigate('/task-tracking')}>
+          My Tasks
+        </button>
+        <button className="btn">My Portfolio</button>
+        <button className="btn">My Projects</button>
+      </nav>
+
+      <div className="content">
+        {/* Portfolio Section */}
+        <div className="card portfolio">
+          <h3>Portfolio</h3>
+          <div className="portfolio-input">
+            <input
+              type="text"
+              value={portfolioInput}
+              onChange={(e) => setPortfolioInput(e.target.value)}
+              placeholder="Enter a URL for your portfolio"
+            />
+            <button className="btn" onClick={handleAddPortfolioItem}>
+              Add
+            </button>
+          </div>
+          <ul className="portfolio-list">
+            {portfolio.map((item, index) => (
+              <li key={index}>
+                <a href={item} target="_blank" rel="noopener noreferrer">
+                  {item}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Project Feed Section */}
+        <div className="card project-feed">
+          <h3>Project Feed</h3>
+          {portfolio.length > 0 ? (
+            portfolio.map((project, index) => (
+              <div key={index} className="project-post">
+                <p>{project}</p>
+              </div>
+            ))
+          ) : (
+            <p>No projects added yet.</p>
+          )}
+        </div>
+
+        {/* Post Status Section */}
+        <div className="card project-status">
+          <h3>Post a Status</h3>
+          <textarea
+            value={status}
+            onChange={(e) => setStatus(e.target.value)}
+            placeholder="What project are you working on?"
+          ></textarea>
+          <button className="btn" onClick={handlePostStatus}>
+            Post
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Dashboard;
