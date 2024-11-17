@@ -34,7 +34,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const userRoutes = require('./routes/userRoutes');
-const recruiterRoutes = require('./routes/recruiterRoutes');
+//const recruiterRoutes = require('./routes/recruiterRoutes');
 
 const app = express();
 
@@ -46,7 +46,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/auth', userRoutes);
-app.use('/recruiter', recruiterRoutes);
+//app.use('/recruiter', recruiterRoutes);
 
 mongoose
   .connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
