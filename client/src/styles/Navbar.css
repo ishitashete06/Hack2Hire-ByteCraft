@@ -71,3 +71,34 @@
 .btn-signup:hover {
   background-color:#E2BFD9;
 }
+
+.btn-signout {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.btn-signout:hover {
+  background-color: #cc0000;
+}
+
+/* Sign-out button styling */
+.btn-signout {
+  background-color: #FF6B6B;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-signout:hover {
+  background-color: #FF3D3D;
+}
+
+/* Welcome message styling */
+.navbar-user {
+  color: white;
+  font-size: 1em;
+  margin-right: 10px;
+}
+

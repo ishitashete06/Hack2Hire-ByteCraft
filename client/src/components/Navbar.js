@@ -1,28 +1,44 @@
 // src/components/Navbar.js
-
 import React from 'react';
-import { Link } from 'react-router-dom';
-import '../styles/Navbar.css'; 
-//import imageSVG from '../assets/imagesvg.svg'
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../pages/AuthContext';  // Import useAuth hook
+import '../styles/Navbar.css';
 
 function Navbar() {
+  const { isAuthenticated, user, logout } = useAuth();  // Access Auth Context
+  const navigate = useNavigate();
+
+  const handleSignOut = () => {
+    logout();  // Call logout from Auth Context
+    navigate('/signin');  // Navigate to Sign In page
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        {/* <img src={imageSVG} alt="logo"></img> */}
-        <Link to="/">Freelance Hub</Link> {/* Logo text, can be replaced with an actual logo */}
+        <Link to="/">Freelance Hub</Link>
       </div>
       <ul className="navbar-links">
         <li><Link to="/">Home</Link></li>
-        
         <li><Link to="/about">About</Link></li>
         <li><Link to="/discover">Discover</Link></li>
         <li><Link to="/dashboard">Dashboard</Link></li>
         <li><Link to="/swipe-project">Projects for You</Link></li>
       </ul>
       <div className="navbar-auth">
-        <Link to="/signin" className="btn btn-signin">Sign In</Link>
-        <Link to="/signup" className="btn btn-signup">Sign Up</Link>
+        {isAuthenticated ? (
+          <>
+            <span className="navbar-user">Welcome, {user?.username}</span>
+            <button onClick={handleSignOut} className="btn btn-signout">
+              Sign Out
+            </button>
+          </>
+        ) : (
+          <>
+            <Link to="/signin" className="btn btn-signin">Sign In</Link>
+            <Link to="/signup" className="btn btn-signup">Sign Up</Link>
+          </>
+        )}
       </div>
     </nav>
   );

@@ -1,15 +1,14 @@
 // src/index.js
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import App from './App';     // Ensure this file exists
-import { reportWebVitals } from './reportWebVitals';
+import App from './App';
+import { AuthProvider } from './pages/AuthContext'; // Import AuthProvider
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AuthProvider> {/* Wrap App with AuthProvider */}
+      <App />
+    </AuthProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-reportWebVitals();
