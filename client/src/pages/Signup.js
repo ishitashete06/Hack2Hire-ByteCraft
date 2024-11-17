@@ -5,12 +5,13 @@ import { useNavigate } from 'react-router-dom';
 const SignUp = () => {
   const navigate = useNavigate();
 
+  const [userType, setUserType] = useState('freelancer'); // 'freelancer' or 'recruiter'
   const [formData, setFormData] = useState({
     username: '',
     email: '',
     password: '',
     phoneNumber: '',
-    skills: '',
+    skills: '', // Only for freelancers
   });
 
   const handleChange = (e) => {
@@ -18,14 +19,33 @@ const SignUp = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  const handleUserTypeChange = (type) => {
+    setUserType(type);
+    setFormData({ ...formData, skills: '' }); // Clear skills if switching to recruiter
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const skillsArray = formData.skills.split(',').map((skill) => skill.trim());
-    const userData = { ...formData, skills: skillsArray };
+    const userData =
+      userType === 'freelancer'
+        ? {
+            username: formData.username,
+            email: formData.email,
+            password: formData.password,
+            phoneNumber: formData.phoneNumber,
+            skills: formData.skills.split(',').map((skill) => skill.trim()),
+          }
+        : {
+            username: formData.username,
+            email: formData.email,
+            password: formData.password,
+            phoneNumber: formData.phoneNumber,
+          };
 
     try {
-      const response = await fetch('http://localhost:5000/auth/signup', {
+      const endpoint = userType === 'freelancer' ? '/auth/signup' : '/recruiter/signup';
+      const response = await fetch(`http://localhost:5000${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(userData),
@@ -46,6 +66,14 @@ const SignUp = () => {
   return (
     <div className="auth-container">
       <h2>Sign Up</h2>
+      <div className="user-type-buttons">
+        <button onClick={() => handleUserTypeChange('freelancer')} className={userType === 'freelancer' ? 'active' : ''}>
+          Sign Up as Freelancer
+        </button>
+        <button onClick={() => handleUserTypeChange('recruiter')} className={userType === 'recruiter' ? 'active' : ''}>
+          Sign Up as Recruiter
+        </button>
+      </div>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -79,14 +107,16 @@ const SignUp = () => {
           onChange={handleChange}
           required
         />
-        <input
-          type="text"
-          name="skills"
-          placeholder="Skills (comma-separated)"
-          value={formData.skills}
-          onChange={handleChange}
-          required
-        />
+        {userType === 'freelancer' && (
+          <input
+            type="text"
+            name="skills"
+            placeholder="Skills (comma-separated)"
+            value={formData.skills}
+            onChange={handleChange}
+            required
+          />
+        )}
         <button type="submit">Sign Up</button>
       </form>
     </div>
