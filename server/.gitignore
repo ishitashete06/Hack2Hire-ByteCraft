@@ -1,2 +1,19 @@
+# Node modules for the server (Express)
 node_modules/
-.cache/
+
+# Logs
+*.log
+
+# Environment files specific to the server-side
+.env
+
+# Build output
+build/
+dist/
+
+# IDE/Editor folders
+.vscode/
+.idea/
+
+# Miscellaneous
+*.bak
