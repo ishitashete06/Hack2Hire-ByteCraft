@@ -105,12 +105,12 @@ const Navbar = () => {
           {!user ? (
             <div className="flex items-center gap-4">
               <Link to="/login">
-                <Button className="bg-[#F7EFE5] text-black hover:bg-[#E2BFD9]">
+                <Button className="bg-[#F7EFE5] text-black hover:bg-[#E2BFD9] text-xl ">
                   Login
                 </Button>
               </Link>
               <Link to="/signup">
-                <Button className="bg-[#6A38C2] text-white hover:bg-[#5b30a6]">
+                <Button className="bg-[#F7EFE5] text-black hover:bg-[#E2BFD9] text-xl ">
                   Signup
                 </Button>
               </Link>

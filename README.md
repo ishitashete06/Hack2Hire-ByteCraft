@@ -7,7 +7,7 @@ Team members
 3. Varun Adhiya
 4. Samruddhi Bhende
 
-The project is developed for **Hack2Hire Hackathon **organised by SkillMingle. This is a freelance webapp with enhanced features. 
+The project is developed for **Hack2Hire Hackathon** organised by SkillMingle. This is a freelance webapp with enhanced features. 
 
 ## FreelanceHub
 
@@ -27,7 +27,6 @@ FreelanceHub is a freelancing platform designed to connect clients with top-tier
 ## Features
 
 - **Tinder-like Matching Mechanism**: Match freelancers with relevant projects by swiping through projects.
-- **Spotify-style Personalization**: Tailored recommendations for freelancers based on user preferences and activity.
 - **Team Collaboration Tools**: Tools for teams to collaborate on projects in real-time.
 - **AI-Powered Skill Tests**: Proctored tests for skill verification, enhancing credibility for freelancers.
 - **Blockchain-based Payment System**: Secure and transparent payment system for project transactions.
@@ -60,9 +59,9 @@ Ensure you have the following installed:
 3. **Start the Development Server**
 
    ```bash
-   npm start
+   npm run dev```
 
-   This command will start the development server and open the application in your default browser. By default, it runs on http://localhost:3000.
+   Run this for both "client" and "server" folders.
 
 ## Contributing
 
