@@ -36,7 +36,8 @@ const Home = () => {
           className="rounded-lg w-[350px] h-[250px] object-cover"
         />
       </section>
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 md:px-10 lg:px-12 my-12">
+      <HeroSection />
+      <section className="max-w-7xl mx-auto px-6 sm:px-8 md:px-10 lg:px-12 my-1">
         <h2 className="text-3xl font-bold text-gray-800 mb-6">Explore Categories</h2>
         <CategoryCarousel />
       </section>
