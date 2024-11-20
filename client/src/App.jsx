@@ -16,6 +16,8 @@ import Applicants from './components/admin/Applicants'
 import ProtectedRoute from './components/admin/ProtectedRoute'
 import SkillDevelopment from './components/skilldevelopment'
 import Assessment from './components/Assessment'
+//import SavedJobs from './components/ui/savedProject' 
+import SavedProject from './components/ui/savedProject'
 
 
 const appRouter = createBrowserRouter([
@@ -50,6 +52,10 @@ const appRouter = createBrowserRouter([
   {
     path: "/assessment",
     element: <Assessment/>
+  },
+  {
+    path: "/saved-projects",
+    element: <SavedProject/>
   },
   {
     path: "/profile",
