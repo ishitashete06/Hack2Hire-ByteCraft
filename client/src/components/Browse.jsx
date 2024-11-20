@@ -1,39 +1,102 @@
-import React, { useEffect } from 'react'
-import Navbar from './shared/Navbar'
-import Job from './Job';
+import React, { useEffect, useState } from 'react';
+import Navbar from './shared/Navbar';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSearchedQuery } from '@/redux/jobSlice';
 import useGetAllJobs from '@/hooks/useGetAllJobs';
-
-// const randomJobs = [1, 2,45];
+import '../styles/SwipeProject.css';
+import { FaBookmark } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const Browse = () => {
-    useGetAllJobs();
-    const {allJobs} = useSelector(store=>store.job);
-    const dispatch = useDispatch();
-    useEffect(()=>{
-        return ()=>{
-            dispatch(setSearchedQuery(""));
-        }
-    },[])
-    return (
-        <div>
-            <Navbar />
-            <div className='max-w-7xl mx-auto my-10'>
-                <h1 className='font-bold text-xl my-10'>Search Results ({allJobs.length})</h1>
-                <div className='grid grid-cols-3 gap-4'>
-                    {
-                        allJobs.map((job) => {
-                            return (
-                                <Job key={job._id} job={job}/>
-                            )
-                        })
-                    }
-                </div>
+  useGetAllJobs();
+  const { allJobs } = useSelector((store) => store.job);
+  const dispatch = useDispatch();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [savedJobs, setSavedJobs] = useState([]);
+  const [swipeDirection, setSwipeDirection] = useState(null);
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    return () => {
+      dispatch(setSearchedQuery(''));
+    };
+  }, [dispatch]);
+
+  const swipe = (direction) => {
+    if (currentIndex >= allJobs.length) return;
+    setSwipeDirection(direction);
+
+    if (direction === 'swipe-right') {
+      setSavedJobs((prev) => [...prev, allJobs[currentIndex]]);
+    }
+
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex + 1 <= allJobs.length ? prevIndex + 1 : prevIndex
+      );
+      setSwipeDirection(null);
+    }, 500);
+  };
+
+  const currentJob = currentIndex < allJobs.length ? allJobs[currentIndex] : null;
+  const hasMoreJobs = currentIndex < allJobs.length;
+
+  const handleSavedProjectsClick = () => {
+    navigate('/saved-projects', { state: { savedJobs } });
+  };
+
+  return (
+    <div>
+      <Navbar />
+      <div className="swipe-container">
+        <header className="swipe-header">
+          <h1>Explore Projects ({allJobs.length})</h1>
+          <p>Your right-swiped projects will be available in your dashboard. Discover exciting opportunities below!</p>
+          <FaBookmark className="saved-icon" onClick={handleSavedProjectsClick} />
+        </header>
+
+        {hasMoreJobs && currentJob ? (
+          <div className={`card ${swipeDirection}`}>
+            <div className="project-image-container">
+              <img
+                src={currentJob.company.logo || 'default-logo-url.jpg'}
+                alt={currentJob.company.name}
+                className="project-image"
+              />
             </div>
-        </div>
-    )
-}
+            <div className="card-content">
+              <h2>{currentJob.title}</h2>
+              <p>{currentJob.description}</p>
+              <div className="details">
+                <p><strong>Company:</strong> {currentJob.company.name}</p>
+                <p><strong>Location:</strong> {currentJob.location}</p>
+                <p>
+                  <strong>Website:</strong>{' '}
+                  <a href={currentJob.company.website} target="_blank" rel="noopener noreferrer">
+                    {currentJob.company.website}
+                  </a>
+                </p>
+                <p><strong>Salary:</strong> ${currentJob.salary}</p>
+                <p><strong>Experience:</strong> {currentJob.experienceLevel} years</p>
+              </div>
+            </div>
+            <div className="buttons">
+              <button onClick={() => swipe('swipe-left')} className="swipe-btn left">❌</button>
+              <button onClick={() => swipe('swipe-right')} className="swipe-btn right">✔</button>
+            </div>
+          </div>
+        ) : (
+          <div className="end-card">
+            <h2>No more projects to explore</h2>
+            <p>Time to level up your skills! Click the button below to dive in and discover more opportunities!</p>
+            <button className="explore-btn" onClick={() => navigate('/skill-development')}>
+              Explore Skills
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
 
-export default Browse
+export default Browse;
