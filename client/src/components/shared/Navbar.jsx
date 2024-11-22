@@ -72,6 +72,14 @@ const Navbar = () => {
                 </li>
                 <li>
                   <Link
+                    to="/about"
+                    className="hover:bg-[#6306b9] rounded-md px-2 py-1 transition text-base font-medium"
+                  >
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     to="/jobs"
                     className="hover:bg-[#6306b9] rounded-md px-2 py-1 transition text-base font-medium"
                   >
