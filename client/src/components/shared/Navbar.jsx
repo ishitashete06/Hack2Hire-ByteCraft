@@ -31,19 +31,22 @@ const Navbar = () => {
 
   return (
     <nav className="bg-[#674188] shadow-md">
-      <div className="flex items-center justify-between max-w-7xl mx-auto h-16 px-4 sm:px-6 lg:px-8">
+      <div className="flex items-center justify-between max-w-7xl mx-auto h-12 px-3 sm:px-5 lg:px-6">
         <div>
-          <h1 className="text-4xl font-bold text-white">Freelance<span className="text-[#F83002]">Hub</span>
-          </h1>
+          <Link to="/">
+            <h1 className="text-2xl font-semibold text-white cursor-pointer">
+              Freelance<span className="text-[#F83002]">Hub</span>
+            </h1>
+          </Link>
         </div>
-        <div className="flex items-center gap-8">
-          <ul className="flex items-center gap-6 text-white">
+        <div className="flex items-center gap-6">
+          <ul className="flex items-center gap-4 text-white">
             {user && user.role === 'recruiter' ? (
               <>
                 <li>
                   <Link
                     to="/admin/companies"
-                    className="hover:bg-[#6306b9] rounded-md px-3 py-2 transition text-xl font-bold"
+                    className="hover:bg-[#6306b9] rounded-md px-2 py-1 transition text-base font-medium"
                   >
                     Companies
                   </Link>
@@ -51,7 +54,7 @@ const Navbar = () => {
                 <li>
                   <Link
                     to="/admin/jobs"
-                    className="hover:bg-[#6306b9] rounded-md px-3 py-2 transition text-xl font-bold"
+                    className="hover:bg-[#6306b9] rounded-md px-2 py-1 transition text-base font-medium"
                   >
                     Jobs
                   </Link>
@@ -62,7 +65,7 @@ const Navbar = () => {
                 <li>
                   <Link
                     to="/"
-                    className="hover:bg-[#6306b9] rounded-md px-3 py-2 transition text-xl font-bold"
+                    className="hover:bg-[#6306b9] rounded-md px-2 py-1 transition text-base font-medium"
                   >
                     Home
                   </Link>
@@ -70,7 +73,7 @@ const Navbar = () => {
                 <li>
                   <Link
                     to="/jobs"
-                    className="hover:bg-[#6306b9] rounded-md px-3 py-2 transition text-xl font-bold"
+                    className="hover:bg-[#6306b9] rounded-md px-2 py-1 transition text-base font-medium"
                   >
                     Jobs
                   </Link>
@@ -78,7 +81,7 @@ const Navbar = () => {
                 <li>
                   <Link
                     to="/browse"
-                    className="hover:bg-[#6306b9] rounded-md px-3 py-2 transition text-xl font-bold"
+                    className="hover:bg-[#6306b9] rounded-md px-2 py-1 transition text-base font-medium"
                   >
                     Browse
                   </Link>
@@ -86,7 +89,7 @@ const Navbar = () => {
                 <li>
                   <Link
                     to="/skill-development"
-                    className="hover:bg-[#6306b9] rounded-md px-3 py-2 transition text-xl font-bold"
+                    className="hover:bg-[#6306b9] rounded-md px-2 py-1 transition text-base font-medium"
                   >
                     Skill Development
                   </Link>
@@ -94,7 +97,7 @@ const Navbar = () => {
                 <li>
                   <Link
                     to="/assessment"
-                    className="hover:bg-[#6306b9] rounded-md px-3 py-2 transition text-xl font-bold"
+                    className="hover:bg-[#6306b9] rounded-md px-2 py-1 transition text-base font-medium"
                   >
                     Skill Assessment
                   </Link>
@@ -103,14 +106,14 @@ const Navbar = () => {
             )}
           </ul>
           {!user ? (
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
               <Link to="/login">
-                <Button className="bg-[#F7EFE5] text-black hover:bg-[#E2BFD9] text-xl ">
+                <Button className="bg-[#F7EFE5] text-black hover:bg-[#E2BFD9] text-sm">
                   Login
                 </Button>
               </Link>
               <Link to="/signup">
-                <Button className="bg-[#F7EFE5] text-black hover:bg-[#E2BFD9] text-xl ">
+                <Button className="bg-[#F7EFE5] text-black hover:bg-[#E2BFD9] text-sm">
                   Signup
                 </Button>
               </Link>
@@ -118,30 +121,30 @@ const Navbar = () => {
           ) : (
             <Popover>
               <PopoverTrigger asChild>
-                <Avatar className="cursor-pointer">
+                <Avatar className="cursor-pointer w-8 h-8">
                   <AvatarImage
                     src={user?.profile?.profilePhoto}
                     alt="@shadcn"
                   />
                 </Avatar>
               </PopoverTrigger>
-              <PopoverContent className="w-80 bg-white shadow-lg rounded-md p-4">
+              <PopoverContent className="w-72 bg-white shadow-lg rounded-md p-3">
                 <div>
                   <div className="flex gap-2 items-center">
-                    <Avatar className="cursor-pointer">
+                    <Avatar className="cursor-pointer w-8 h-8">
                       <AvatarImage
                         src={user?.profile?.profilePhoto}
                         alt="@shadcn"
                       />
                     </Avatar>
                     <div>
-                      <h4 className="font-medium">{user?.fullname}</h4>
-                      <p className="text-sm text-gray-600">
+                      <h4 className="font-medium text-sm">{user?.fullname}</h4>
+                      <p className="text-xs text-gray-600">
                         {user?.profile?.bio}
                       </p>
                     </div>
                   </div>
-                  <div className="flex flex-col mt-4 gap-2 text-gray-700">
+                  <div className="flex flex-col mt-2 gap-1 text-gray-700">
                     {user && user.role === 'student' && (
                       <div className="flex items-center gap-2 cursor-pointer">
                         <User2 />
