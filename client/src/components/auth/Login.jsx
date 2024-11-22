@@ -27,10 +27,11 @@ const Login = () => {
     }
 
     const submitHandler = async (e) => {
+        debugger
         e.preventDefault();
         try {
             dispatch(setLoading(true));
-            const res = await axios.post(`${USER_API_END_POINT}/login`, input, {
+            const res = await axios.post(`${USER_API_END_POINT}/login`, input, { //this line is causing error problem for the code
                 headers: {
                     "Content-Type": "application/json"
                 },

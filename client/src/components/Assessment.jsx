@@ -145,6 +145,8 @@ function Assessment() {
   };
 
   return (
+    <>
+    <Navbar />
     <div className="assessment">
       {step === 0 && (
         <div className="subject-selection">
@@ -200,6 +202,7 @@ function Assessment() {
         </div>
       )}
     </div>
+    </>
   );
 }
 

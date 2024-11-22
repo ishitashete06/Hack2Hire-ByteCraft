@@ -120,9 +120,9 @@ function SkillDevelopment() {
     .filter((course) => selectedRating === 'All' || course.rating >= parseFloat(selectedRating));
 
   return (
+    <>
+      <Navbar />
     <div className="skill-development">
-      <Navbar></Navbar>
-
       <div className="filter-container">
         <i className="fas fa-filter filter-icon"></i>
         <select
@@ -159,6 +159,7 @@ function SkillDevelopment() {
         ))}
       </div>
     </div>
+    </>
   );
 }
 
