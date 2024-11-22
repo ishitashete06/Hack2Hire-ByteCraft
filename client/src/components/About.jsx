@@ -5,81 +5,66 @@ import Navbar from './shared/Navbar';
 const About = () => {
   return (
     <div>
-        <Navbar />
-    <div className="min-h-screen">
-      <div className="max-w-7xl mx-auto px-6 py-10 bg-[#F7EFE5]">
-        <header className="text-center mb-16">
-          <h1 className="text-4xl font-semibold text-[#9852C1]"> 
-            About <span className="text-[#674188]">FreelanceHub</span>
-          </h1>
-          <p className="text-lg text-[#674188] mt-2">
-            Your gateway to seamless freelancing experiences.
-          </p>
-        </header>
-
-        <section>
-          <div className="mb-12 text-center">
-            <h3 className="text-2xl font-bold text-[#674188]">
-              Hack2Hire Hackathon Project
-            </h3>
-            <p className="mt-4 text-lg text-[#674188] max-w-2xl mx-auto">
-              <strong>FreelanceHub</strong> is a platform created by{' '}
-              <strong>Team Byte Craft</strong> for{' '}
-              <strong>Hack2Hire Hackathon by SkillMingle</strong> to bridge the gap
-              between freelancers and clients with a focus on innovation, trust,
-              and efficiency.
+      <Navbar />
+      <div className="min-h-screen flex flex-col justify-center bg-[#F7EFE5]">
+        <div className="max-w-5xl mx-auto px-4 py-6">
+          <header className="text-center mb-6">
+            <h1 className="text-3xl font-semibold text-[#9852C1]">
+              About <span className="text-[#674188]">FreelanceHub</span>
+            </h1>
+            <p className="text-sm text-[#674188] mt-1">
+              Your gateway to seamless freelancing experiences.
             </p>
-          </div>
+          </header>
 
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold text-[#674188] text-center mb-12">
-              Why Choose FreelanceHub?
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-              <div className="bg-white shadow-xl rounded-lg p-8 text-center hover:shadow-2xl transition-shadow duration-300">
-                <Handshake className="text-[#C8A1E0] h-16 w-16 mx-auto mb-6" />
-                <h3 className="text-xl font-semibold text-[#674188] mb-2">
+          <section>
+            <div className="text-center mb-6">
+              <h3 className="text-xl font-bold text-[#674188]">
+                Hack2Hire Hackathon Project
+              </h3>
+              <p className="mt-2 text-sm text-[#674188]">
+                <strong>FreelanceHub</strong> by <strong>Team Byte Craft </strong> bridges the gap between freelancers and clients with innovation, trust, and efficiency.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+              <div className="bg-white shadow rounded p-4 text-center">
+                <Handshake className="text-[#C8A1E0] h-10 w-10 mx-auto mb-3" />
+                <h3 className="text-lg font-semibold text-[#674188]">
                   Seamless Connections
                 </h3>
-                <p className="text-[#674188]">
-                  Find the perfect freelancer or project with our Tinder-like
-                  matching mechanism.
+                <p className="text-sm text-[#674188]">
+                  Find freelancers or projects with Tinder-like matching.
                 </p>
               </div>
 
-              <div className="bg-white shadow-xl rounded-lg p-8 text-center hover:shadow-2xl transition-shadow duration-300">
-                <Users className="text-[#C8A1E0] h-16 w-16 mx-auto mb-6" />
-                <h3 className="text-xl font-semibold text-[#674188] mb-2">
+              <div className="bg-white shadow rounded p-4 text-center">
+                <Users className="text-[#C8A1E0] h-10 w-10 mx-auto mb-3" />
+                <h3 className="text-lg font-semibold text-[#674188]">
                   Team Collaboration
                 </h3>
-                <p className="text-[#674188]">
-                  Collaborate effortlessly with built-in tools for communication
-                  and management.
+                <p className="text-sm text-[#674188]">
+                  Built-in tools for communication and management.
                 </p>
               </div>
 
-              <div className="bg-white shadow-xl rounded-lg p-8 text-center hover:shadow-2xl transition-shadow duration-300">
-                <GraduationCap className="text-[#C8A1E0] h-16 w-16 mx-auto mb-6" />
-                <h3 className="text-xl font-semibold text-[#674188] mb-2">
+              <div className="bg-white shadow rounded p-4 text-center">
+                <GraduationCap className="text-[#C8A1E0] h-10 w-10 mx-auto mb-3" />
+                <h3 className="text-lg font-semibold text-[#674188]">
                   Skill Validation
                 </h3>
-                <p className="text-[#674188]">
-                  Verify freelancer skills with AI-powered proctored assessments.
+                <p className="text-sm text-[#674188]">
+                  Verify freelancer skills with AI-powered assessments.
                 </p>
               </div>
             </div>
-          </div>
 
-          <div className="text-center">
-            <p className="text-lg text-[#674188]">
-              At <strong>FreelanceHub</strong>, we are committed to empowering
-              freelancers and businesses alike. Join us and redefine the future of
-              freelancing.
+            <p className="text-sm text-center text-[#674188]">
+              <strong>FreelanceHub</strong>: Empowering freelancers and businesses. Join us and redefine freelancing.
             </p>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
-    </div>
     </div>
   );
 };
