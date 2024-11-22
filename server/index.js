@@ -32,7 +32,11 @@ app.use("/api/v1/company", companyRoute);
 app.use("/api/v1/job", jobRoute);
 app.use("/api/v1/application", applicationRoute);
 
-
+app.use(cors({
+    origin: "http://localhost:5174", // replace with your frontend URL
+    credentials: true,  // allow cookies if needed
+  }));
+  
 
 app.listen(PORT,()=>{
     connectDB();
