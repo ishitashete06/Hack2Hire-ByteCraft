@@ -8,6 +8,8 @@ import companyRoute from "./routes/company.route.js";
 import jobRoute from "./routes/job.route.js";
 import scoresRoute from "./routes/scores.route.js";
 import applicationRoute from "./routes/application.route.js";
+import savedProjectRoute from "./routes/savedProject.route.js";
+
 
 dotenv.config({});
 
@@ -33,9 +35,11 @@ app.use("/api/v1/company", companyRoute);
 app.use("/api/v1/job", jobRoute);
 app.use("/api/v1/application", applicationRoute);
 app.use("/api/v1/scores", scoresRoute);
+app.use("/api/v1/saved-projects", savedProjectRoute);
+
 
 app.use(cors({
-    origin: "http://localhost:5174", // replace with your frontend URL
+    origin: "http://localhost:5173", // replace with your frontend URL
     credentials: true,  // allow cookies if needed
   }));
   
