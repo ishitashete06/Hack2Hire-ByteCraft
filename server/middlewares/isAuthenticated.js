@@ -20,9 +20,8 @@ const isAuthenticated = async (req, res, next) => {
             });
         }
 
-        // Attach user ID to the request object for downstream usage
-        req.user = { id: decoded.userId }; 
-
+        // Attach user ID to the request object for downstream usage 
+        req.user = { _id: decoded.userId };
         next(); // Proceed to the next middleware or controller
     } catch (error) {
         console.error("Authentication Error:", error.message);

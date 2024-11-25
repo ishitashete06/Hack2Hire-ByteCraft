@@ -25,23 +25,26 @@ const Browse = () => {
   // Save a job to the backend
   const saveJobToBackend = async (jobId) => {
     try {
-      const response = await fetch("http://localhost:3000/api/v1/saved-projects/save", {
+      const response = await fetch("http://localhost:8000/api/v1/saved-projects/save", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        credentials: "include",
+        credentials: "include", // Include credentials (cookies) with the request
         body: JSON.stringify({ projectId: jobId }),
       });
+  
       const data = await response.json();
       if (!data.success) {
-        console.error(data.message);
+        console.error("Failed to save project:", data.message);
+      } else {
+        console.log("Project saved successfully:", data.savedProject);
       }
     } catch (error) {
-      console.error("Error saving project:", error);
+      console.error("Error saving project to backend:", error);
     }
   };
-
+  
   const swipe = (direction) => {
     if (currentIndex >= allJobs.length) return;
     setSwipeDirection(direction);
