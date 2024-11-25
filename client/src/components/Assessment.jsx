@@ -113,7 +113,7 @@ function Assessment() {
     }
   };  
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
     let userScore = 0;
@@ -124,12 +124,46 @@ function Assessment() {
       }
     });
   
-    setScore(userScore);
-    setTimeTaken(((Date.now() - startTime) / 1000).toFixed(2)); // Calculate time taken in seconds
+    const calculatedScore = userScore;
+    const timeTakenSeconds = ((Date.now() - startTime) / 1000).toFixed(2);
+  
+    setScore(calculatedScore);
+    setTimeTaken(timeTakenSeconds);
     stopProctoring(); // Stop camera after test submission
     setStep(2); // Move to the report step
-    console.log('Behavior analysis: Generating report...');
+  
+    // Prepare payload
+    const payload = {
+      name: "Student Name", // Replace with user's name from state/context
+      role: "student",
+      skillAssessment: subjects[selectedSubject].name,
+      timeTaken: parseFloat(timeTakenSeconds),
+      score: calculatedScore
+    };
+  
+    console.log('Sending data to backend:', payload);
+  
+    // Send data to the backend
+    try {
+      const response = await fetch('http://localhost:5000/api/v1/scores/add', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+  
+      const data = await response.json();
+      if (data.success) {
+        console.log('Score successfully saved:', data);
+      } else {
+        console.error('Error saving score:', data.message);
+      }
+    } catch (error) {
+      console.error('Failed to save score:', error);
+    }
   };
+  
   
 
   const generateReport = () => {

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from './shared/Navbar';
 import { Avatar, AvatarImage } from './ui/avatar';
 import { Button } from './ui/button';
@@ -12,6 +13,7 @@ import useGetAppliedJobs from '@/hooks/useGetAppliedJobs';
 import axios from 'axios'; 
 
 const Profile = () => {
+    const navigate = useNavigate();
     useGetAppliedJobs();
     const [open, setOpen] = useState(false);
     const [score, setScore] = useState(null); 
@@ -55,7 +57,7 @@ const Profile = () => {
                         <Button className="mb-4 w-full" onClick={fetchScore}>
                             Score
                         </Button>
-                        <Button className="mb-4 w-full" onClick={() => alert('Track My Tasks clicked!')}>Track My Tasks</Button>
+                        <Button className="mb-4 w-full" onClick={() =>navigate('/task-tracking')}>Track My Tasks</Button>
                         <Button className="mb-4 w-full" onClick={() => alert('Saved Projects clicked!')}>Saved Projects</Button>
                         <Button
                             className="mt-auto w-full bg-red-500 text-white hover:bg-red-600"
@@ -64,7 +66,7 @@ const Profile = () => {
                     </div>
                 </div>
             )}
-
+            
             <div className="max-w-4xl mx-auto bg-white border border-gray-200 rounded-2xl my-5 p-8">
                 <div className="flex justify-between">
                     <div className="flex items-center gap-4">
