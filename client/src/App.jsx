@@ -5,6 +5,7 @@ import Signup from './components/auth/Signup'
 import Home from './components/Home'
 import Jobs from './components/Jobs'
 import Browse from './components/Browse'
+import TaskTracking from './components/TaskTracking'
 import Profile from './components/Profile'
 import JobDescription from './components/JobDescription'
 import Companies from './components/admin/Companies'
@@ -90,6 +91,10 @@ const appRouter = createBrowserRouter([
   {
     path:"/about",
     element: <About />
+  },
+  {
+    path:"/task-tracking",
+    element: <TaskTracking />
   }
 
 ])

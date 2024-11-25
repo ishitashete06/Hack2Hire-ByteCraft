@@ -13,7 +13,8 @@ export const saveProject = async (req, res) => {
         await savedProject.save();
 
         res.status(201).json({ success: true, message: "Project saved successfully", savedProject });
-    } catch (error) {
+    } 
+    catch (error) {
         res.status(500).json({ success: false, message: error.message });
     }
 };
