@@ -15,12 +15,31 @@ const Job = ({job}) => {
         const timeDifference = currentTime - createdAt;
         return Math.floor(timeDifference/(1000*24*60*60));
     }
-    
+    const saveJobToBackend = async (jobId) => {
+        try {
+          const response = await fetch("http://localhost:8000/api/v1/saved-projects/save", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            credentials: "include", // Include credentials (cookies) with the request
+            body: JSON.stringify({ projectId: jobId }),
+          });
+      
+          const data = await response.json();
+          if (!data.success) {
+            console.error("Failed to save project:", data.message);
+          } else {
+            console.log("Project saved successfully:", data.savedProject);
+          }
+        } catch (error) {
+          console.error("Error saving project to backend:", error);
+        }
+      };
     return (
         <div className='p-5 rounded-md shadow-xl bg-white border border-gray-100'>
             <div className='flex items-center justify-between'>
                 <p className='text-sm text-gray-500'>{daysAgoFunction(job?.createdAt) === 0 ? "Today" : `${daysAgoFunction(job?.createdAt)} days ago`}</p>
-                <Button variant="outline" className="rounded-full" size="icon"><Bookmark /></Button>
             </div>
 
             <div className='flex items-center gap-2 my-2'>
@@ -46,7 +65,7 @@ const Job = ({job}) => {
             </div>
             <div className='flex items-center gap-4 mt-4'>
                 <Button onClick={()=> navigate(`/description/${job?._id}`)} variant="outline">Details</Button>
-                <Button className="bg-[#7209b7]">Save For Later</Button>
+                <Button className="bg-[#7209b7]"onClick={() => saveJobToBackend(job?._id)}>Save For Later</Button>
             </div>
         </div>
     )
