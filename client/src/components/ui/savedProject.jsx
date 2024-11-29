@@ -10,7 +10,7 @@ const SavedProject = () => {
   // Fetch saved projects from the backend
   const fetchSavedProjects = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/v1/saved-projects", {
+      const response = await fetch("http://localhost:8000/api/v1/saved-projects", {
         credentials: "include",
       });
       const data = await response.json();
