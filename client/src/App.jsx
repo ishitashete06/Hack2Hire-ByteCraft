@@ -22,6 +22,7 @@ import Assessment from './components/Assessment'
 import SavedProject from './components/ui/savedProject'
 
 
+
 const appRouter = createBrowserRouter([
   {
     path: '/',
@@ -56,9 +57,14 @@ const appRouter = createBrowserRouter([
     element: <Assessment/>
   },
   {
+    path: "/saved-projects/:id",
+    element: <SavedProject/>
+  },
+  {
     path: "/saved-projects",
     element: <SavedProject/>
   },
+ 
   {
     path: "/profile",
     element: <Profile />

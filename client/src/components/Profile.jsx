@@ -58,7 +58,7 @@ const Profile = () => {
                             Score
                         </Button>
                         <Button className="mb-4 w-full" onClick={() =>navigate('/task-tracking')}>Track My Tasks</Button>
-                        <Button className="mb-4 w-full" onClick={() => alert('Saved Projects clicked!')}>Saved Projects</Button>
+                        <Button className="mb-4 w-full" onClick={() => navigate('/saved-projects')}>Saved Projects</Button>
                         <Button
                             className="mt-auto w-full bg-red-500 text-white hover:bg-red-600"
                             onClick={() => setIsPaneOpen(false)}

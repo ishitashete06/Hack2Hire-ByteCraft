@@ -2,27 +2,46 @@ import React, { useEffect, useState } from "react";
 import Navbar from "./shared/Navbar";
 import { useDispatch, useSelector } from "react-redux";
 import { setSearchedQuery } from "@/redux/jobSlice";
-import useGetAllJobs from "@/hooks/useGetAllJobs";
 import "../styles/SwipeProject.css";
 import { FaBookmark } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const Browse = () => {
-  useGetAllJobs();
   const { allJobs } = useSelector((store) => store.job);
   const dispatch = useDispatch();
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [savedJobs, setSavedJobs] = useState([]);
+  const [bookmarkedIds, setBookmarkedIds] = useState([]); // Track bookmarked job IDs
+  const [rejectedIds, setRejectedIds] = useState([]); // Track rejected job IDs
   const [swipeDirection, setSwipeDirection] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
+    const fetchSavedJobs = async () => {
+      try {
+        const response = await fetch("http://localhost:8000/api/v1/saved-projects", {
+          method: "GET",
+          credentials: "include",
+        });
+        const data = await response.json();
+
+        if (data.success) {
+          const savedIds = data.savedProjects.map((project) => project.jobId._id);
+          setBookmarkedIds(savedIds); // Initialize with already saved jobs
+        } else {
+          console.error("Failed to fetch saved projects:", data.message);
+        }
+      } catch (error) {
+        console.error("Error fetching saved projects:", error.message);
+      }
+    };
+
+    fetchSavedJobs();
+
     return () => {
       dispatch(setSearchedQuery(""));
     };
   }, [dispatch]);
 
-  // Save a job to the backend
   const saveJobToBackend = async (jobId) => {
     try {
       const response = await fetch("http://localhost:8000/api/v1/saved-projects/save", {
@@ -30,44 +49,61 @@ const Browse = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        credentials: "include", // Include credentials (cookies) with the request
-        body: JSON.stringify({ projectId: jobId }),
+        credentials: "include",
+        body: JSON.stringify({ jobId }),
       });
-  
       const data = await response.json();
+
       if (!data.success) {
-        console.error("Failed to save project:", data.message);
+        console.error("Failed to save job:", data.message);
       } else {
-        console.log("Project saved successfully:", data.savedProject);
+        console.log("Job saved successfully:", data.savedProject);
       }
     } catch (error) {
-      console.error("Error saving project to backend:", error);
+      console.error("Error saving job to backend:", error);
     }
   };
-  
+
   const swipe = (direction) => {
     if (currentIndex >= allJobs.length) return;
+
+    const currentJob = filteredJobs[currentIndex];
+    if (!currentJob || !currentJob._id) return;
+
     setSwipeDirection(direction);
 
     if (direction === "swipe-right") {
-      const jobToSave = allJobs[currentIndex];
-      setSavedJobs((prev) => [...prev, jobToSave]);
-      saveJobToBackend(jobToSave._id);
+      // Bookmark the job - add to bookmarked and save to backend
+      setBookmarkedIds((prev) => [...prev, currentJob._id]);
+      saveJobToBackend(currentJob._id);
+    } else if (direction === "swipe-left") {
+      // Reject the job - add to rejected jobs
+      setRejectedIds((prev) => [...prev, currentJob._id]);
     }
 
+    // Move to the next job in the list
     setTimeout(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex + 1 <= allJobs.length ? prevIndex + 1 : prevIndex
-      );
+      setCurrentIndex((prevIndex) => {
+        // If we've reached the end of the available jobs, reset to 0 for circular behavior
+        const nextIndex = prevIndex + 1;
+        return nextIndex < filteredJobs.length ? nextIndex : 0; // Circular loop
+      });
       setSwipeDirection(null);
     }, 500);
   };
 
-  const currentJob = currentIndex < allJobs.length ? allJobs[currentIndex] : null;
-  const hasMoreJobs = currentIndex < allJobs.length;
+  // Filter out bookmarked jobs and include rejected jobs in the loop
+  const filteredJobs = allJobs
+    .filter((job) => 
+      !bookmarkedIds.includes(job._id) && // Exclude bookmarked jobs
+      (rejectedIds.includes(job._id) || !rejectedIds.includes(job._id)) // Include rejected jobs in the cycle
+    );
+
+  const currentJob = currentIndex < filteredJobs.length ? filteredJobs[currentIndex] : null;
+  const hasMoreJobs = filteredJobs.length > 0;
 
   const handleSavedProjectsClick = () => {
-    navigate("/saved-projects", { state: { savedJobs } });
+    navigate("/saved-projects");
   };
 
   return (
@@ -75,7 +111,7 @@ const Browse = () => {
       <Navbar />
       <div className="swipe-container">
         <header className="swipe-header">
-          <h1>Explore Projects ({allJobs.length})</h1>
+          <h1>Explore Projects ({filteredJobs.length})</h1>
           <p>
             Your right-swiped projects will be available in your dashboard.
             Discover exciting opportunities below!
