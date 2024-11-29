@@ -11,6 +11,7 @@ import applicationRoute from "./routes/application.route.js";
 import savedProjectRoute from "./routes/savedProject.route.js";
 import taskRoutes from "./routes/tasks.route.js";
 
+
 dotenv.config({});
 
 const app = express();
@@ -36,6 +37,8 @@ app.use("/api/v1/application", applicationRoute);
 app.use("/api/v1/scores", scoresRoute);
 app.use("/api/v1/saved-projects", savedProjectRoute);
 app.use('/api/tasks', taskRoutes);
+
+
 
 app.use(cors({
     origin: "http://localhost:5173", // replace with your frontend URL
