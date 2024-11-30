@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 const corsOptions = {
-    origin:'https://bytecraft-backend-ujbo.onrender.com',
+    origin:'https://sparkly-platypus-b8d7ab.netlify.app/',
     credentials:true
 }
 
@@ -41,7 +41,7 @@ app.use('/api/tasks', taskRoutes);
 
 
 app.use(cors({
-    origin: "https://bytecraft-backend-ujbo.onrender.com", // replace with your frontend URL
+    origin: "https://sparkly-platypus-b8d7ab.netlify.app/", // replace with your frontend URL
     credentials: true,  // allow cookies if needed
   }));
   
