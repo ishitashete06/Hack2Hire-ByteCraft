@@ -1,43 +1,95 @@
+// import { createSlice } from "@reduxjs/toolkit";
+
+// const jobSlice = createSlice({
+//     name:"job",
+//     initialState:{
+//         allJobs:[],
+//         allAdminJobs:[],
+//         singleJob:null, 
+//         searchJobByText:"",
+//         allAppliedJobs:[],
+//         searchedQuery:"",
+//     },
+//     reducers:{
+//         // actions
+//         setAllJobs:(state,action) => {
+//             state.allJobs = action.payload;
+//         },
+//         setSingleJob:(state,action) => {
+//             state.singleJob = action.payload;
+//         },
+//         setAllAdminJobs:(state,action) => {
+//             state.allAdminJobs = action.payload;
+//         },
+//         setSearchJobByText:(state,action) => {
+//             state.searchJobByText = action.payload;
+//         },
+//         setAllAppliedJobs:(state,action) => {
+//             state.allAppliedJobs = action.payload;
+//         },
+//         setSearchedQuery:(state,action) => {
+//             state.searchedQuery = action.payload;
+//         }
+//     }
+// });
+// export const {
+//     setAllJobs, 
+//     setSingleJob, 
+//     setAllAdminJobs,
+//     setSearchJobByText, 
+//     setAllAppliedJobs,
+//     setSearchedQuery
+// } = jobSlice.actions;
+// export default jobSlice.reducer;
+
+
 import { createSlice } from "@reduxjs/toolkit";
 
 const jobSlice = createSlice({
-    name:"job",
-    initialState:{
-        allJobs:[],
-        allAdminJobs:[],
-        singleJob:null, 
-        searchJobByText:"",
-        allAppliedJobs:[],
-        searchedQuery:"",
+    name: "job",
+    initialState: {
+        allJobs: [],
+        allAdminJobs: [],
+        singleJob: null,
+        searchJobByText: "",
+        allAppliedJobs: [],
+        searchedQuery: "",
+        categoryFilter: "", // Added state to store the selected category filter
     },
-    reducers:{
+    reducers: {
         // actions
-        setAllJobs:(state,action) => {
+        setAllJobs: (state, action) => {
             state.allJobs = action.payload;
         },
-        setSingleJob:(state,action) => {
+        setSingleJob: (state, action) => {
             state.singleJob = action.payload;
         },
-        setAllAdminJobs:(state,action) => {
+        setAllAdminJobs: (state, action) => {
             state.allAdminJobs = action.payload;
         },
-        setSearchJobByText:(state,action) => {
+        setSearchJobByText: (state, action) => {
             state.searchJobByText = action.payload;
         },
-        setAllAppliedJobs:(state,action) => {
+        setAllAppliedJobs: (state, action) => {
             state.allAppliedJobs = action.payload;
         },
-        setSearchedQuery:(state,action) => {
+        setSearchedQuery: (state, action) => {
             state.searchedQuery = action.payload;
-        }
-    }
+        },
+        setCategoryFilter: (state, action) => { // Added action to set category filter
+            state.categoryFilter = action.payload;
+        },
+    },
 });
+
 export const {
-    setAllJobs, 
-    setSingleJob, 
+    setAllJobs,
+    setSingleJob,
     setAllAdminJobs,
-    setSearchJobByText, 
+    setSearchJobByText,
     setAllAppliedJobs,
-    setSearchedQuery
+    setSearchedQuery,
+    setCategoryFilter, // Export new action for setting the category filter
 } = jobSlice.actions;
+
 export default jobSlice.reducer;

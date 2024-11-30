@@ -12,7 +12,7 @@ const HeroSection = () => {
 
     const searchJobHandler = () => {
         dispatch(setSearchedQuery(query));
-        navigate('/browse');
+        navigate('/jobs');
     };
 
     return (
@@ -34,7 +34,7 @@ const HeroSection = () => {
                         placeholder="Find your dream jobs"
                         onChange={(e) => setQuery(e.target.value)}
                         className="outline-none border-none w-full text-[#674188] placeholder-[#C8A1E0]"
-                    />
+                    /> 
                     <Button
                         onClick={searchJobHandler}
                         className="rounded-r-full bg-[#6A38C2] hover:bg-[#674188] text-white"

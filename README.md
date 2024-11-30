@@ -22,11 +22,11 @@ FreelanceHub is a freelancing platform designed to connect clients with top-tier
 - **Task Tracking Features**: Helps freelancers stay on track with their tasks
 
 ## Tech Stack
-Frontend: React.js
-Backend: Node.js, Express.js
-Database: MongoDB
-Cloud Services: Cloudinary for file management
-Authentication: JWT for secure access
+- Frontend: React.js
+- Backend: Node.js, Express.js
+- Database: MongoDB
+- Cloud Services: Cloudinary for file management
+- Authentication: JWT for secure access
 
 ## Setup Instructions
 
@@ -34,7 +34,7 @@ Authentication: JWT for secure access
 
 Ensure you have the following installed:
 
-- [Node.js](https://nodejs.org/) (version 14 or higher)
+- [Node.js](https://nodejs.org/) (version 18 or higher)
 - [npm](https://www.npmjs.com/) (Node Package Manager)
 
 ### Installation
@@ -57,7 +57,6 @@ Ensure you have the following installed:
 
    ```bash
    npm run dev
-
-   Run this for both "client" and "server" folders.
+Run this for both "client" and "server" folders.
 
 We’re excited to continue evolving FreelanceHub to better serve the freelancing community!
