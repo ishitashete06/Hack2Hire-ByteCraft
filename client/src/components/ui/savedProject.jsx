@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import Navbar from "../shared/Navbar";
 const SavedProject = () => {
   const [savedProjects, setSavedProjects] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -52,6 +52,8 @@ const SavedProject = () => {
   }
 
   return (
+    <div>
+      <Navbar />
     <div className="max-w-6xl mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold text-gray-800 mb-8 text-center">Your Saved Projects</h1>
       {savedProjects.length === 0 ? (
@@ -126,6 +128,7 @@ const SavedProject = () => {
           ))}
         </div>
       )}
+    </div>
     </div>
   );
 };
