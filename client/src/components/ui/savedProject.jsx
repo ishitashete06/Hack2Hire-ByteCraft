@@ -13,7 +13,7 @@ const SavedProject = () => {
   useEffect(() => {
     const fetchSavedProjects = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/v1/saved-projects", {
+        const response = await fetch("https://bytecraft-backend-ujbo.onrender.com/api/v1/saved-projects", {
           method: "GET",
           credentials: "include",
         });
