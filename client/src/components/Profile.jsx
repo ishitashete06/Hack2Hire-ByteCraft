@@ -39,9 +39,9 @@ const Profile = () => {
                 className="fixed top-4 left-4 z-50 cursor-pointer flex flex-col items-center gap-1"
                 onClick={() => setIsPaneOpen(true)}
             >
-                <div className="h-1 w-8 bg-black rounded"></div>
-                <div className="h-1 w-8 bg-black rounded"></div>
-                <div className="h-1 w-8 bg-black rounded"></div>
+                <div className="h-1 w-5 bg-white rounded"></div>
+                <div className="h-1 w-5 bg-white rounded"></div>
+                <div className="h-1 w-5 bg-white rounded"></div>
             </div>
 
             {isPaneOpen && (
@@ -54,9 +54,6 @@ const Profile = () => {
                             />
                         </Avatar>
                         <h1 className="font-medium text-xl mb-4">{user?.fullname}</h1>
-                        <Button className="mb-4 w-full" onClick={fetchScore}>
-                            Score
-                        </Button>
                         <Button className="mb-4 w-full" onClick={() =>navigate('/task-tracking')}>Track My Tasks</Button>
                         <Button className="mb-4 w-full" onClick={() => navigate('/saved-projects')}>Saved Projects</Button>
                         <Button
