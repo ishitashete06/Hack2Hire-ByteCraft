@@ -13,7 +13,7 @@ const SavedProject = () => {
   useEffect(() => {
     const fetchSavedProjects = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/v1/saved-projects", {
+        const response = await fetch("https://bytecraft-backend-ujbo.onrender.com/api/v1/saved-projects", {
           method: "GET",
           credentials: "include",
         });
@@ -58,12 +58,10 @@ const SavedProject = () => {
   return (
     <div>
       <Navbar />
-      <div className=" px-4 py-8 bg-[#F7EFE5]">
+      <div className="px-4 py-8 bg-[#F7EFE5]">
         <h1 className="text-4xl font-bold text-[#674188] mb-8 text-center">Your Saved Projects</h1>
         {savedProjects.length === 0 ? (
-          <p className="text-center text-[#674188]">
-            No saved projects yet. Explore and save some!
-          </p>
+          <p className="text-center text-[#674188]">No saved projects yet. Explore and save some!</p>
         ) : (
           <div className="space-y-8">
             {savedProjects.map((project) => (
@@ -71,15 +69,10 @@ const SavedProject = () => {
                 key={project._id}
                 className="saved-project-card bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow border border-[#E2BFD9]"
               >
-                {/* Project Overview */}
                 <div className="p-6 flex justify-between items-start">
                   <div>
-                    <h2 className="text-xl font-bold text-[#674188]">
-                      {project.jobId?.title || "Project Title"}
-                    </h2>
-                    <p className="text-[#674188] mt-2 text-sm">
-                      {project.jobId?.description || "No description available."}
-                    </p>
+                    <h2 className="text-xl font-bold text-[#674188]">{project.jobId?.title || "Project Title"}</h2>
+                    <p className="text-[#674188] mt-2 text-sm">{project.jobId?.description || "No description available."}</p>
                   </div>
                   <button
                     onClick={() => handleViewDetails(project)}
@@ -91,10 +84,11 @@ const SavedProject = () => {
                   >
                     {selectedProject?._id === project._id ? "Hide Description" : "View Description"}
                   </button>
-                  <div className='flex items-center gap-4 mt-4'>
-                <Button onClick={()=> navigate(`/description/${project.jobId?._id}`)} variant="outline">Details and Apply</Button>
-            
-            </div>
+                  <div className="flex items-center gap-4 mt-4">
+                    <Button onClick={() => navigate(`/description/${project.jobId?._id}`)} variant="outline">
+                      Details and Apply
+                    </Button>
+                  </div>
                 </div>
 
                 {/* Details Section */}
@@ -108,8 +102,7 @@ const SavedProject = () => {
                       />
                       <div>
                         <p className="text-[#674188]">
-                          <strong>Company:</strong>{" "}
-                          {project.jobId?.company?.name || "N/A"}
+                          <strong>Company:</strong> {project.jobId?.company?.name || "N/A"}
                         </p>
                         <p className="text-[#674188]">
                           <strong>Location:</strong> {project.jobId?.location || "N/A"}
@@ -129,8 +122,7 @@ const SavedProject = () => {
                     </div>
                     <div className="mt-4">
                       <p className="text-[#674188]">
-                        <strong>Requirements:</strong>{" "}
-                        {project.jobId?.requirements?.join(", ") || "N/A"}
+                        <strong>Requirements:</strong> {project.jobId?.requirements?.join(", ") || "N/A"}
                       </p>
                       <p className="text-[#674188]">
                         <strong>Salary:</strong> ₹{project.jobId?.salary?.toLocaleString() || "N/A"}
@@ -147,4 +139,4 @@ const SavedProject = () => {
   );
 };
 
-export default SavedProject;
+export default SavedProject;
