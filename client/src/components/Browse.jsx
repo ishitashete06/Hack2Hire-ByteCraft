@@ -149,7 +149,7 @@ const Browse = () => {
                   </a>
                 </p>
                 <p>
-                  <strong>Salary:</strong> ${currentJob.salary}
+                  <strong>Salary:</strong> INR {currentJob.salary}
                 </p>
                 <p>
                   <strong>Experience:</strong> {currentJob.experienceLevel} years

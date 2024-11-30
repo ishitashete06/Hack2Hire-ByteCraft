@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../shared/Navbar";
+import { Button } from "./button";
+import { useNavigate } from "react-router-dom";
 
 const SavedProject = () => {
   const [savedProjects, setSavedProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedProject, setSelectedProject] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchSavedProjects = async () => {
@@ -55,7 +58,7 @@ const SavedProject = () => {
   return (
     <div>
       <Navbar />
-      <div className="max-w-6xl mx-auto px-4 py-8 bg-[#F7EFE5]">
+      <div className=" px-4 py-8 bg-[#F7EFE5]">
         <h1 className="text-4xl font-bold text-[#674188] mb-8 text-center">Your Saved Projects</h1>
         {savedProjects.length === 0 ? (
           <p className="text-center text-[#674188]">
@@ -86,8 +89,12 @@ const SavedProject = () => {
                         : "bg-[#C8A1E0] text-white hover:bg-[#674188]"
                     }`}
                   >
-                    {selectedProject?._id === project._id ? "Hide Details" : "View Details"}
+                    {selectedProject?._id === project._id ? "Hide Description" : "View Description"}
                   </button>
+                  <div className='flex items-center gap-4 mt-4'>
+                <Button onClick={()=> navigate(`/description/${project.jobId?._id}`)} variant="outline">Details and Apply</Button>
+            
+            </div>
                 </div>
 
                 {/* Details Section */}
